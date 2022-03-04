@@ -1,0 +1,136 @@
+<!-- Q4. Write a JavaScript Program using HTML to input a number and display whether the number is prime or not. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .flexbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.1), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.03) 3px), linear-gradient(0deg, rgb(85, 215, 255), rgb(231, 255, 185));
+        }
+
+        .container {
+            position: relative;
+            height: 40%;
+            width: 40%;
+            flex-direction: column;
+            border-radius: 20px;
+            /* border: 1px solid rgba(255, 255, 255, .4);
+            border-right: 1px solid rgba(255, 255, 255, .2);
+            border-bottom: 1px solid rgba(255, 255, 255, .2); */
+            box-shadow: 0 5px 45px rgb(0 0 0 / 20%);
+            backdrop-filter: blur(5px);
+            font-family: 'Courier New', Courier, monospace;
+            background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.03) 3px), linear-gradient(0deg, rgb(231, 255, 185), rgb(85, 215, 255));
+        }
+
+        .text {
+            position: absolute;
+            height: 50%;
+            width: 100%;
+            top: 0;
+            flex-direction: column;
+        }
+
+        .text h1 {
+            position: absolute;
+            font-size: 25px;
+            font-style: oblique;
+            top: 10%;
+            color: rgb(122, 0, 0);
+        }
+
+        .text form {
+            position: absolute;
+            font-size: 20px;
+            top: 50%;
+        }
+
+        .text form input {
+            width: 25%;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            height: 30px;
+            width: 70px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        p {
+            position: absolute;
+            bottom: 15%;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body class="flexbox">
+    <div class="container flexbox">
+        <div class="text flexbox">
+            <h1><strong>Question 4:</strong> Check Prime number</h1>
+            <form>
+                <div class="flexbox">
+                    <label for="Prime">Enter a number: </label>
+                    <input id="number" value="" type="text" name="Prime" />
+                </div>
+            </form>
+        </div>
+        <br>
+        <button id="submit" type="submit">Check</button>
+        <br>
+        <p><strong>Answer:</strong> <strong><span id="Number">Given Number</span></strong> is <span
+                id="result">________</span> Prime number.</p>
+    </div>
+    <script>
+        function prime() {
+            let btn = document.getElementById("submit");
+            btn.onclick = function () {
+                let givenNumber = document.getElementById("number").value;
+                let Number = document.getElementById("Number");
+                Number.innerText = givenNumber;
+
+                var flag = false;
+                for (var i = 2; i <= givenNumber / 2; i++) {
+                    if ((givenNumber % i) == 0) {
+                        flag = true;
+                    }
+                }
+
+                let result = document.getElementById("result");
+                if (flag == true) {
+                    result.innerText = "not a";
+                }
+                else {
+                    result.innerText = "a";
+                }
+            };
+        }
+        prime();
+    </script>
+</body>
+
+</html>

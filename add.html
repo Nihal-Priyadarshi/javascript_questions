@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p><strong>Addition:</strong> Enter both numbers</p>
+        <form>
+            <div>
+                <label for="number1">Enter first number: </label>
+                <input id="inputNumber1" value="" type="text" name="number1" />
+                <br><br>
+                <label for="number2">Enter second number: </label>
+                <input id="inputNumber2" value="" type="text" name="number2" />
+            </div>
+        </form>
+    </div>
+    <br>
+    <button id="choose" type="submit">Submit</button>
+    <br>
+    <p><strong>Answer:</strong> <span id="result"></span></p>
+</body>
+<script>
+    function add() {
+        let btn = document.querySelector("#choose");
+        btn.onclick = function () {
+            let givenNumber1 = document.querySelector("#inputNumber1").value;
+            let valueInt1 = parseInt(givenNumber1);
+            let givenNumber2 = document.querySelector("#inputNumber2").value;
+            let valueInt2 = parseInt(givenNumber2);
+
+            let sum = valueInt1 + valueInt2;
+
+            let result = document.getElementById("result");
+            result.innerText = sum;
+
+            // console.log("Addition of " + givenNumber1 + " and " + givenNumber2 + " is: " + sum);
+            // console.log(`Addition of ${givenNumber1} and ${givenNumber2} is: ${sum}`);
+        };
+    }
+    add();
+</script>
+
+</html>

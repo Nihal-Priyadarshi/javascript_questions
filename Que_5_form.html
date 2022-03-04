@@ -1,0 +1,161 @@
+<!-- Q5.Write a program in HTML to create a form with basic form elements as below:
+- Text Field,
+- Password Field,
+- Textarea,
+- Radio Button,
+- Check Box etc -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .flexbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.03) 3px), linear-gradient(0deg, rgb(85, 215, 255), rgb(231, 255, 185));
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            height: 95%;
+            width: 60%;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 0 5px 45px rgb(0 0 0 / 20%);
+            backdrop-filter: blur(5px);
+            font-family: 'Courier New', Courier, monospace;
+            background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.2), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.03) 3px), linear-gradient(0deg, rgb(231, 255, 185), rgb(85, 215, 255));
+        }
+
+        .container h1 {
+            position: absolute;
+            top: 1%;
+            font-size: 30px;
+            font-style: oblique;
+            color: rgb(122, 0, 0);
+        }
+
+        .container form {
+            position: absolute;
+            height: 90%;
+            width: 90%;
+            bottom: 0;
+            font-size: 18px;
+        }
+
+        .container form #fname,
+        .container form #lname {
+            width: 25%;
+        }
+
+        .container form #email {
+            width: 30%;
+        }
+
+        .container form .gender,
+        .container form .stream {
+            display: inline;
+        }
+
+        .container form .buttons{
+            position: absolute;
+            height: 10%;
+            width: 100%;
+        }
+
+        .container form .submit,
+        .container form .reset {
+            position: absolute;
+            height: 30px;
+            width: 70px;
+            justify-self: center;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+        }
+
+        .container form .submit {
+            left: 35%;
+        }
+
+        .container form .reset {
+            right: 35%;
+        }
+    </style>
+</head>
+
+<body class="flexbox">
+    <div class="container flexbox">
+        <h1>Student detail form</h1>
+        <form action="" autocomplete="on">
+            <label for="fname">First name: </label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">Last name: </label>
+            <input type="text" id="lname" name="lname">
+            <br><br>
+            <label for="email">E-mail: </label>
+            <input type="email" id="email" name="email">
+            <br><br>
+            <label for="password">Password: </label>
+            <input type="password" id="" name="password">
+            <br><br>
+            <label for="address">Address</label>
+            <br>
+            <textarea name="address" id="" cols="30" rows="5"></textarea>
+            <br><br>
+            <label for="dob">Date of Birth: </label>
+            <input type="date">
+            <br><br>
+            <h3 class="gender">Gender - </h3>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="trans" name="gender" value="trans">
+            <label for="trans">Trans</label>
+            <br><br>
+            <h3 class="stream">Stream - </h3>
+            <input type="radio" id="science" name="stream" value="science">
+            <label for="science">Science</label>
+            <input type="radio" id="humanities" name="stream" value="humanities">
+            <label for="humanities">Humanities</label>
+            <input type="radio" id="commerce" name="stream" value="commerce">
+            <label for="commerce">Commerce</label>
+            <br><br>
+            <h3>Hobbies - </h3>
+            <br>
+            <input type="checkbox" id="reading" name="reading" value="reading">
+            <label for="reading">Reading</label>
+            <input type="checkbox" id="watching" name="watching" value="watching">
+            <label for="watching">Watching outdoor games</label><br>
+            <input type="checkbox" id="walking" name="walking" value="walking">
+            <label for="walking">Walking</label>
+            <input type="checkbox" id="listening" name="listening" value="listening">
+            <label for="listening">Listening to music</label><br>
+            <br>
+            <div class="buttons flexbox">
+                <button class="submit">Submit</button>
+                <button class="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
